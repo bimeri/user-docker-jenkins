@@ -31,4 +31,9 @@ public class UserController {
   public ResponseEntity<List<UserData>> addUser(String active){
     return ResponseEntity.ok(services.getAllUsers(active));
   }
+
+  @GetMapping(path = "/remove")
+  public ResponseEntity<List<UserData>> deleteUser(String active){
+    return ResponseEntity.ok(services.getAllUsers(active));
+  }
 }
