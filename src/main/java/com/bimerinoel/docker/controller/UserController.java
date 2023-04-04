@@ -33,7 +33,7 @@ public class UserController {
   }
 
   @GetMapping(path = "/remove")
-  public ResponseEntity<List<UserData>> deleteUser(String active){
-    return ResponseEntity.ok(services.getAllUsers(active));
+  public ResponseEntity<String> deleteUser(){
+    return ResponseEntity.ok("User deleted");
   }
 }
