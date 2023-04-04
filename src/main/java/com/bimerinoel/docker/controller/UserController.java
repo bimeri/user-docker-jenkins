@@ -23,8 +23,12 @@ public class UserController {
   this.services = services;
  }
 
- @GetMapping(path = "/all")
- public ResponseEntity<List<UserData>> getAllUser(String active){
-   return ResponseEntity.ok(services.getAllUsers(active));
- }
+  @GetMapping(path = "/all")
+  public ResponseEntity<List<UserData>> getAllUser(String active){
+    return ResponseEntity.ok(services.getAllUsers(active));
+  }
+  @GetMapping(path = "/add")
+  public ResponseEntity<List<UserData>> addUser(String active){
+    return ResponseEntity.ok(services.getAllUsers(active));
+  }
 }
