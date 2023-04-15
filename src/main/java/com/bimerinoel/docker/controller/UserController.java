@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author Bimeri Noel
@@ -36,4 +37,19 @@ public class UserController {
   public ResponseEntity<String> deleteUser(){
     return ResponseEntity.ok("User deleted");
   }
+
+ public static List<Integer> gradingStudents(List<Integer> grades) {
+  // Write your code here
+  List<Integer> grade = grades.stream().map(s -> gradeRule(s.intValue())).collect(Collectors.toList());
+  return grade;
+ }
+
+ public static int gradeRule(int grade) {
+  int rem = grade%5;
+  if(grade%5 < 3) {
+   return grade + rem;
+  }
+  return grade;
+ }
+
 }
