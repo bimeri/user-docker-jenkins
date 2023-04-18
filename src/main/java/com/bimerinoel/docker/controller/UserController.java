@@ -40,8 +40,7 @@ public class UserController {
 
  public static List<Integer> gradingStudents(List<Integer> grades) {
   // Write your code here
-  List<Integer> grade = grades.stream().map(s -> gradeRule(s.intValue())).collect(Collectors.toList());
-  return grade;
+  return grades.stream().map(UserController::gradeRule).collect(Collectors.toList());
  }
 
  public static int gradeRule(int grade) {
